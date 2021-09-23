@@ -1,0 +1,50 @@
+.navBar {
+    background-color: white;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    box-shadow: 4px 4px 4px #e2e2e2;
+}
+
+.logo {
+    height: 64px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.logo img {
+    height: 100%;
+    margin: 5%;
+}
+
+.menu {
+    text-align: right;
+    flex-grow: 2;
+}
+
+.menu-list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    list-style-type: none;
+    text-transform: uppercase;
+}
+
+.menu-list li {
+    padding-top: 0.5rem;
+    padding-right: 2%;
+    color: rgb(0, 65, 107);
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color:black;
+}
