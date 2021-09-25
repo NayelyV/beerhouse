@@ -1,0 +1,15 @@
+.shopping {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.shopping-icon {
+    color: rgb(0, 65, 107);
+}
+
+.shopping-icon:hover {
+    color:black;
+}

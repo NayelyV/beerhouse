@@ -1,0 +1,10 @@
+.container {
+    background-color: #eeeeee;
+    height: 100vh;
+}
+
+.title {
+    padding-top: 2%;
+    font-weight: 300;
+    font-size: 3rem;
+}
