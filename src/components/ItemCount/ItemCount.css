@@ -1,0 +1,39 @@
+.item-container {
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    width: 240px;
+    padding: 8px;
+    background-color: white;
+}
+
+.counter-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 16px;
+}
+.counter-container p {
+    margin: 0px 16px;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.counter-button {
+    height: 32px;
+    width: 32px;
+    border: 1px solid #00416B;
+    border-radius: 4px;
+    background-color: white;
+    color: #00416B;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.add-button {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #00416B;
+    border-radius: 4px;
+    background-color: #00416B;
+    color: white;
+}
