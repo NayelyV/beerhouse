@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useRef} from 'react'
-import baltika from '../../img/baltika.jpg'
 import './ItemCount.css'
 
 const ItemCount = ({stock, initial, onAdd}) => {
@@ -28,7 +27,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     })
 
     return (
-        <div className='item-container'>
+        <div className='item-count-container'>
             <div className='counter-container'>
                 <button className='counter-button' onClick={handleDecrement}>-</button>
                 <p>{counter}</p>
