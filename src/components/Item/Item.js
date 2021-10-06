@@ -1,6 +1,9 @@
 import React from 'react'
 import './Item.css'
 
+//Component
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
+
 const Item = ({ data }) => {
     return (
         <div className='item-container'>
@@ -8,7 +11,7 @@ const Item = ({ data }) => {
             <h2>{data.name}</h2>
             <p>{data.company}</p>
             <p className='item-price'>{data.price}</p>
-            <button className='detail-button'>Ver detalle</button>
+            <ItemDetailContainer product={data}></ItemDetailContainer>
         </div>
     )
 }

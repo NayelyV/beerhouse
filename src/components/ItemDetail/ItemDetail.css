@@ -1,0 +1,12 @@
+.item-detail-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.item-detail-info {
+    
+}
+
+.item-block {
+    display: block;
+}
