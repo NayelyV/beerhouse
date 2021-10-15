@@ -1,12 +1,19 @@
-.item-detail-container {
-    display: flex;
-    flex-direction: row;
+
+.product-image {
+    margin-top: 2%;
+    padding: 2%;
+}
+.product-detail {
+    text-align: left;
+    margin-top: 4%;
 }
 
-.item-detail-info {
-    
+.company {
+    color: #00416B;
 }
 
-.item-block {
-    display: block;
+.price {
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #00416B;
 }

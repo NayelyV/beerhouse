@@ -1,17 +1,18 @@
 import React from 'react'
-import './Item.css'
+import {Link} from 'react-router-dom'
 
-//Component
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
+// Styles
+import './Item.css'
 
 const Item = ({ data }) => {
     return (
         <div className='item-container'>
-            <div><img className='item-image' src={data.image} alt={data.name}></img></div>
-            <h2>{data.name}</h2>
-            <p>{data.company}</p>
-            <p className='item-price'>{data.price}</p>
-            <ItemDetailContainer product={data}></ItemDetailContainer>
+            <Link to={`/item/${data.id}`}>
+                <div><img className='item-image' src={data.image} alt={data.name}></img></div>
+                <h2>{data.name}</h2>
+                <p>{data.company}</p>
+                <p className='item-price'>{data.price}</p>
+            </Link>
         </div>
     )
 }

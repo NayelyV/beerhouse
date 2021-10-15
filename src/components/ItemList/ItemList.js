@@ -7,11 +7,9 @@ const ItemList = ({products}) => {
 
     return (
         <div className='item-list-container'>
-            <h1>Lista de cervezas</h1>
-
             <div className='products'>
                 {products.map((product) => {
-                return ( <div>
+                return ( <div key={product.id}>
                         <Item data={product}></Item>
                     </div>
                     );

@@ -2,6 +2,9 @@ import React from 'react'
 import { Grid } from 'semantic-ui-react'
 import ItemCount from '../ItemCount/ItemCount'
 
+//Styles
+import './ItemDetail.css'
+
 const ItemDetail = ({ product }) => {
 
     const onAdd = (counter) => {
@@ -10,16 +13,17 @@ const ItemDetail = ({ product }) => {
 
     return (
         <Grid>
-            <Grid.Column width={6}>
-                <img className='item-image' src={product.image} alt={product.name}></img>
+            <Grid.Column width={6} className='product-image'>
+                <img src={product.image} alt={product.name}></img>
             </Grid.Column>
-            <Grid.Column width={8}>
+            <Grid.Column width={8} className='product-detail'>
                 <h2>{product.name}</h2>
-                <p>{product.company}</p>
-                <p className='item-price'>{product.price}</p>
-                <p>País: {product.country}</p>
-                <p>Volumen: {product.volume}</p>
-                <p>Estilo: {product.style}</p>
+                <p className="company">{product.company}</p>
+                <p className='price'>{product.price}</p>
+                <p><strong>País: </strong>{product.country}</p>
+                <p><strong>Volumen: </strong>{product.volume}</p>
+                <p><strong>Estilo: </strong>{product.style}</p>
+                <p><strong>Descripción: </strong>{product.description}</p>
                 <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
             </Grid.Column>
         </Grid>
