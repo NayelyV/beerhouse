@@ -25,6 +25,7 @@ const ItemDetail = ({ product }) => {
                 <p><strong>Estilo: </strong>{product.style}</p>
                 <p><strong>Descripción: </strong>{product.description}</p>
                 <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
+                
             </Grid.Column>
         </Grid>
     )

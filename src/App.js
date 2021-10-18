@@ -14,6 +14,7 @@ function App() {
             <Route path="/" exact component={ItemListContainer}/>
             <Route path="/category/:id" component={ItemListContainer}/>
             <Route path="/item/:id" component={ItemDetailContainer}/>
+            <Route path="/cart" component={null}/>
           </div>
     </Router>
 

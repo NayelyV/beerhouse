@@ -1,10 +1,14 @@
 import React, {useState, useEffect, useRef} from 'react'
+import {Redirect} from 'react-router-dom'
+
+//Styles
 import './ItemCount.css'
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
     const [counter, setCounter] = useState(initial);
     const isInitialMount = useRef(true);
+    const [goCart, setGoCart] = useState(false)
 
     const handleIncrement = () => {
         if (counter < stock) {
@@ -26,6 +30,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
          }
     })
 
+    const handleCart = () => {
+        setGoCart(true)
+    }
+
     return (
         <div className='item-count-container'>
             <div className='counter-container'>
@@ -33,7 +41,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <p>{counter}</p>
                 <button className='counter-button' onClick={handleIncrement}>+</button>
             </div>
-            <button className='add-button'>Agregar al carrito</button>
+            {goCart && <Redirect push to="/cart" />}
+            <button className='add-button' onClick={handleCart}>Agregar al carrito</button>
         </div>
     )
 }
