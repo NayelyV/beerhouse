@@ -1,14 +1,27 @@
-import React from 'react'
-import { Grid } from 'semantic-ui-react'
+import React, { useState, useContext } from 'react'
+
+//Context
+import { CartContext } from '../../CartContext'
+
+//Components
 import ItemCount from '../ItemCount/ItemCount'
 
 //Styles
+import { Grid } from 'semantic-ui-react'
 import './ItemDetail.css'
 
 const ItemDetail = ({ product }) => {
+    const [quantity, setQuantity] = useState()
+    const [items, setItems, addItem] = useContext(CartContext)
 
     const onAdd = (counter) => {
         console.log('Cantidad: ', counter)
+        setQuantity(counter)
+    }
+
+    const handleCart = () => {
+
+        addItem(product, quantity)
     }
 
     return (
@@ -25,7 +38,7 @@ const ItemDetail = ({ product }) => {
                 <p><strong>Estilo: </strong>{product.style}</p>
                 <p><strong>Descripción: </strong>{product.description}</p>
                 <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
-                
+                <button className='add-button' onClick={handleCart}>Agregar al carrito</button>
             </Grid.Column>
         </Grid>
     )

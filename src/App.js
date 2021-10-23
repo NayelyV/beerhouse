@@ -5,10 +5,12 @@ import {BrowserRouter as Router, Route} from "react-router-dom"
 import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { CartProvider } from './CartContext';
 
 function App() {
   return (
-    <Router>
+    <CartProvider>
+      <Router>
           <div className="App">
             <NavBar />
             <Route path="/" exact component={ItemListContainer}/>
@@ -16,7 +18,9 @@ function App() {
             <Route path="/item/:id" component={ItemDetailContainer}/>
             <Route path="/cart" component={null}/>
           </div>
-    </Router>
+      </Router>
+    </CartProvider>
+
 
   );
 }

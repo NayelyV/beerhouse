@@ -26,12 +26,3 @@
     font-size: 1.4rem;
     font-weight: 400;
 }
-
-.add-button {
-    width: 100%;
-    height: 40px;
-    border: 1px solid #00416B;
-    border-radius: 4px;
-    background-color: #00416B;
-    color: white;
-}
