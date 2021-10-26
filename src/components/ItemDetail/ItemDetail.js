@@ -11,8 +11,8 @@ import { Grid } from 'semantic-ui-react'
 import './ItemDetail.css'
 
 const ItemDetail = ({ product }) => {
-    const [quantity, setQuantity] = useState()
-    const [items, setItems, addItem] = useContext(CartContext)
+    const [quantity, setQuantity] = useState(1)
+    const [items,, addItem] = useContext(CartContext)
 
     const onAdd = (counter) => {
         console.log('Cantidad: ', counter)
@@ -20,7 +20,7 @@ const ItemDetail = ({ product }) => {
     }
 
     const handleCart = () => {
-
+        console.log("Add item:" , items)
         addItem(product, quantity)
     }
 

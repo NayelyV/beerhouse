@@ -2,8 +2,8 @@
     width: 64px;
     height: 64px;
     display: flex;
-    flex-flow: column nowrap;
     justify-content: center;
+    align-items: center;
 }
 
 .shopping-icon {
@@ -12,4 +12,18 @@
 
 .shopping-icon:hover {
     color:black;
+}
+
+.cart-number {
+    position: relative;
+    right: -30px;
+    top: -8px;
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    border-radius: 8px;
+    color: white;
+    z-index: 1;
+    text-align: center;
+
 }

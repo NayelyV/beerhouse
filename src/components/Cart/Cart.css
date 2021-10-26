@@ -1,0 +1,10 @@
+.cart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+}
+
+.finish-button {
+    width: 100%;
+}

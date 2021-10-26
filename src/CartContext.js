@@ -8,13 +8,15 @@ export const CartProvider = ({children}) => {
     const addItem = (item, quantity) => {
         console.log("Item:", item)
         console.log("Cantidad: ", quantity)
-        const newItems = items
+        const newItems = items.slice()
+        console.log("Insertar") 
         if (isInCart(item.id)) {
             //Update item
             console.log("Actualizar") 
             const index = newItems.findIndex((element => element.product.id == item.id))
             newItems[index].quantity = quantity
             setItems(newItems)
+
         } else {
             //Insert item
             console.log("Insertar") 
@@ -22,6 +24,7 @@ export const CartProvider = ({children}) => {
             setItems(newItems)
             
         } 
+        console.log("AddItem: ", items)
         
     }
 
@@ -30,11 +33,12 @@ export const CartProvider = ({children}) => {
             //Delete item
             const newItems = items.filter((element => element.product.id != itemId))
             setItems(newItems)
-            console.log(items) 
         } else {
             //Error item
             alert("Este producto no estaba en tu carrito")
         }
+
+        console.log(items) 
     }
 
     const clear = () => {
