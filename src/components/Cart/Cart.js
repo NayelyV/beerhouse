@@ -12,16 +12,12 @@ import ItemCart from '../ItemCart/ItemCart'
 import EmptyCart from '../EmptyCart/EmptyCart'
 
 const Cart = () => {
-    const [items, setItems] = useContext(CartContext)
-
-    console.log(items)
+    const [items] = useContext(CartContext)
 
     const getTotal = () => {
-        console.log("get total")
-        console.log(items)
         let total = 0
         for (let item of items) {
-            total = total + (item.quantity * item.product.priceNumber)
+            total = total + (item.quantity * item.priceNumber)
         }
         return total
     }
@@ -30,7 +26,7 @@ const Cart = () => {
         <div className="cart-container">
             {items.length > 0 ? <div>{items.map((item) => {
                 return ( 
-                    <div key={item.product.id}>
+                    <div key={item.productId}>
                         <ItemCart item={item}></ItemCart>
                     </div>
                     );

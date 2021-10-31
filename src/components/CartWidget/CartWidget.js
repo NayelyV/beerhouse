@@ -9,7 +9,6 @@ import { CartContext } from '../../CartContext'
 
 const CartWidget = () => {
   const [items] = useContext(CartContext)
-  console.log("CartWidget items:", items);
 
   const getTotal = () => {
     let total = 0

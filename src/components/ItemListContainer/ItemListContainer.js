@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import axios from 'axios';
+
+//Firebase
+import {collection, getDocs, query, where} from 'firebase/firestore'
+import { db } from '../../firebase'
 
 //Styles
 import './ItemListContainer.css'
@@ -16,22 +19,25 @@ const ItemListContainer = ({match}) => {
 
     useEffect(() => {
         setIsLoading(true)
-        axios('https://6158ba3f5167ba00174bbbc9.mockapi.io/api/v1/products').then((res) => 
-            setProducts(res.data) 
-        )
-        setIsLoading(false)
-    }, [])
-
-    const filterProducts = () => {
-        // eslint-disable-next-line eqeqeq
-        let items = categoryId ? products.filter(element => element.categoryId == categoryId) : products
-        return items
-    }
+        const requestData = async() => {
+            const docs = []
+            const productsRef = collection(db, "products")
+            const search = categoryId ? query(productsRef, where("categoryId", "==", parseInt(categoryId))) : productsRef
+            const items = await getDocs(search)
+            setIsLoading(false)
+            items.forEach((doc) => {
+              docs.push({...doc.data(), token: doc.id})
+            })
+            
+            setProducts(docs)
+          }
+          requestData()
+    }, [categoryId])
 
     return (
         <div className='container'>
             { isLoading && <Loading></Loading> }
-            { filterProducts().length > 0 ? <ItemList products={filterProducts()}/> : <h1 className="title">No hay productos para esta categoría</h1>}
+            { products.length > 0 ? <ItemList products={products}/> : <h1 className="title">No hay productos para esta categoría</h1>}
         </div>
     )
 }

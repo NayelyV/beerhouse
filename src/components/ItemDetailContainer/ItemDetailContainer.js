@@ -1,22 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
+//Firebase
+import {doc, getDoc} from 'firebase/firestore'
+import { db } from '../../firebase'
 
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = ({ match }) => {
     let itemId = match.params.id;
     const [item, setItem] = useState([])
+
     useEffect(() => {
-		axios(`https://6158ba3f5167ba00174bbbc9.mockapi.io/api/v1/products/?id=${itemId}`).then((res) =>
-            setItem(res.data)
-		);
+        const requestData = async() => {
+            const docs = []
+            const productsRef = doc(db, "products", itemId)
+            const docSnap = await getDoc(productsRef)
+            if (docSnap.exists()) {
+                docs.push({...docSnap.data(), token: docSnap.id})
+                setItem(docs)
+            }
+          }
+          requestData()
 	}, [itemId]);
     
     return (
         <div>
             {item.map((product) => {
                 return (
-                    <ItemDetail key={product.id} product={product}></ItemDetail>
+                    <ItemDetail key={product.productId} product={product}></ItemDetail>
                 )
             })}
         </div>

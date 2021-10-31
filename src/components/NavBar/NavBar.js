@@ -1,7 +1,10 @@
 import logo from '../../img/logo.jpg'
 import React, {useState, useEffect} from 'react'
-import axios from 'axios';
 import {Link} from 'react-router-dom'
+
+//Firebase
+import {collection, getDocs} from 'firebase/firestore'
+import { db } from '../../firebase'
 
 //Styles
 import './NavBar.css'
@@ -12,10 +15,18 @@ import CartWidget from '../CartWidget/CartWidget';
 const NavBar = () => {
 
     const [categories, setCategories] = useState([])
+
     useEffect(() => {
-        axios('https://6158ba3f5167ba00174bbbc9.mockapi.io/api/v1/categories').then((res) => 
-        setCategories(res.data)
-        )
+        const requestData = async() => {
+            const docs = []
+            const categoriesRef = collection(db, "categories")
+            const items = await getDocs(categoriesRef)
+            items.forEach((doc) => {
+              docs.push({...doc.data(), token: doc.id})
+            })
+            setCategories(docs)
+          }
+          requestData()
     }, [])
 
     return (
@@ -29,7 +40,7 @@ const NavBar = () => {
                 <ul className="menu-list">
                 {categories.map((category) => {
                     return ( 
-                        <li key={category.id}><Link to={`/category/${category.id}`}>{category.name}</Link></li>
+                        <li key={category.categoryId}><Link to={`/category/${category.categoryId}`}>{category.name}</Link></li>
                         );
                     })}
                 </ul>

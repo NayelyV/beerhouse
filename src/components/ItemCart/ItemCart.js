@@ -7,11 +7,10 @@ import { CartContext } from '../../CartContext'
 
 const ItemCart = ({ item }) => {
 
-    const [, , addItem, removeItem] = useContext(CartContext)
+    const [, , , removeItem] = useContext(CartContext)
 
     const handleDelete = () => {
-        console.log("Delete")
-        removeItem(item.product.id)
+        removeItem(item.productId)
     }
 
     return (
@@ -21,10 +20,10 @@ const ItemCart = ({ item }) => {
                     <Image
                     floated='left'
                     size='mini'
-                    src={item.product.image}
+                    src={item.image}
                     />
-                    <Card.Header>{item.product.name}</Card.Header>
-                    <Card.Meta>{item.product.price}</Card.Meta>
+                    <Card.Header>{item.name}</Card.Header>
+                    <Card.Meta>{item.price}</Card.Meta>
                     <Card.Meta>Cantidad: {item.quantity}</Card.Meta>
                     <Button basic color='red' onClick={handleDelete}>
                         Eliminar
