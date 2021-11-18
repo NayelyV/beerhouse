@@ -4,22 +4,28 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Descripción
 
-Tienda de venta de cervezas nacionales como internacionales
+Tienda de venta de cervezas nacionales, internacionales y accesorios.
 
 ## Librerías
 
 Para la realización de este proyecto se ocupan las siguientes librerías:
 
-### `axios`
+### `firebase`
 
-Libreria que funciona para hacer peticiones HTTP
+Se ocupó la base de datos Firestore, para almacenar y sincronizar datos tanto del lado del cliente como del servidor.
 
 ### `react-router-dom`
 
-Librería que provee un mecanismo de navegación
+Librería que provee un mecanismo de navegación.
 
 ### `semantic-ui`
 
-Framework para crear el diseño de interfaces
+Framework para crear el diseño de interfaces de manera más sencilla, permitiéndonos enfocarnos en la funcionalidad de la página.
+
+### `formik`
+Librería ocupada para el manejo de formularios.
+
+### `yup`
+Librería para validación de formularios.
 
 
