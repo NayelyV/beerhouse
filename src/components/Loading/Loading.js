@@ -1,10 +1,10 @@
-import React from 'react'
-import { Dimmer, Loader } from 'semantic-ui-react'
+import React from "react";
+import { Dimmer, Loader } from "semantic-ui-react";
 
 const Loading = () => (
-    <Dimmer active>
-        <Loader />
-    </Dimmer>
-)
+  <Dimmer active>
+    <Loader size="huge" content="Cargando..." />
+  </Dimmer>
+);
 
-export default Loading
+export default Loading;

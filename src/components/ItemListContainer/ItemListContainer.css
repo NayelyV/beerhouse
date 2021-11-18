@@ -1,6 +1,6 @@
 .container {
     background-color: #eeeeee;
-    min-height: 60vh;
+    min-height: 80vh;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -11,4 +11,9 @@
 .title {
     font-weight: 300;
     font-size: 3rem;
+}
+
+.home-container {
+    width: 100%;
+    height: auto;
 }

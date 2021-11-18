@@ -1,16 +1,20 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import { Button } from 'semantic-ui-react'
+import React from "react";
+import { Link } from "react-router-dom";
+
+//Styles
+import "./EmptyCart.css";
+import { Button } from "semantic-ui-react";
 
 const EmptyCart = () => {
-    return (
-        <div>
-            <h1>No tienes productos en tu carrito</h1>
-            <Link to={`/`}>
-                <Button>Buscar productos</Button>
-            </Link>
-        </div>
-    )
-}
+  return (
+    <div className="empty-container">
+      <div className="empty-banner"></div>
+      <h1>No tienes productos en tu carrito</h1>
+      <Link to={`/`}>
+        <Button primary>Buscar productos</Button>
+      </Link>
+    </div>
+  );
+};
 
-export default EmptyCart
+export default EmptyCart;

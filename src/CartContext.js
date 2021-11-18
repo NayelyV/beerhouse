@@ -40,10 +40,8 @@ export const CartProvider = ({children}) => {
     const isInCart = (itemId) => {
         const product = items.find(element => element.productId === itemId)
         if (product) {
-            console.log("Ya existe el producto")
             return true
         }
-        console.log("No existe el producto")
         return false
     }
 

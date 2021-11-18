@@ -1,0 +1,15 @@
+.footer-container {
+    width: 100%;
+    background-color: rgb(0, 65, 107);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-items: stretch;
+    color: white;
+    text-align: start;
+    padding: 2%;
+}
+
+.footer-logo {
+    height: 45px;
+    width: 220px;
+}

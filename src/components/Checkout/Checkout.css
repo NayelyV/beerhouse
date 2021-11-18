@@ -1,0 +1,34 @@
+.cart-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 2%;
+}
+
+.finish-button {
+    width: 100%;
+}
+
+.table-container {
+    width: 50%;
+    padding: 2%;
+}
+
+.form-container {
+    width: 50%;
+    padding: 2%;
+    text-align: left;
+}
+
+.form-title {
+    margin-bottom: 4%;
+}
+
+.beer-container {
+    display: flex;
+    align-items: center;
+}
+
+.beer-container p {
+    color: rgb(0, 65, 107);
+    font-weight: 700;
+}
